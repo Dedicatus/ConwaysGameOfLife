@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/PlayButton.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Grid.gd" type="Script" id=4]
+
+[node name="Scene" type="Node2D"]
+position = Vector2( 0, 2 )
+
+[node name="Grid" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="Control" type="Control" parent="."]
+margin_left = 1403.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -447.0
+margin_top = 72.0
+margin_right = -339.0
+margin_bottom = 106.0
+text = "Play"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Control/Play" to="Control/Play" method="_on_Play_pressed"]
