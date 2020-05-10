@@ -24,6 +24,7 @@ func _ready():
 
 func _on_Block_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.is_pressed():
+		Global.player.play()
 		if populated:
 			populated = false
 			populatedNextStep = false
@@ -66,7 +67,9 @@ func apply_Populate_Rule():
 	pass
 
 func update_Block():
-	populated = populatedNextStep
+	if (populated != populatedNextStep):
+		populated = populatedNextStep
+		Global.gridChanged = true
 	if populated:
 		displayBlock.visible = true
 	else:

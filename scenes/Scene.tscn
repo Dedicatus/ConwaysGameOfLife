@@ -24,10 +24,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -173.0
-margin_top = -10.0
-margin_right = -92.0
-margin_bottom = 14.0
+margin_left = -41.0
+margin_top = -12.0
+margin_right = 40.0
+margin_bottom = 12.0
 text = "Play"
 script = ExtResource( 1 )
 __meta__ = {
@@ -39,10 +39,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -40.0
-margin_top = -11.0
-margin_right = 41.0
-margin_bottom = 13.0
+margin_left = -154.0
+margin_top = -12.0
+margin_right = -73.0
+margin_bottom = 12.0
 text = "Next"
 script = ExtResource( 1 )
 __meta__ = {
@@ -54,10 +54,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 97.0
-margin_top = -10.0
-margin_right = 178.0
-margin_bottom = 14.0
+margin_left = 71.0
+margin_top = -12.0
+margin_right = 152.0
+margin_bottom = 12.0
 text = "Clear"
 script = ExtResource( 1 )
 __meta__ = {
@@ -65,10 +65,10 @@ __meta__ = {
 }
 
 [node name="StepDisplay" type="Label" parent="Interface"]
-margin_left = 1167.0
-margin_top = 26.0
-margin_right = 1211.0
-margin_bottom = 40.0
+margin_left = 1146.0
+margin_top = 24.0
+margin_right = 1190.0
+margin_bottom = 38.0
 text = "Step: 0"
 script = ExtResource( 2 )
 __meta__ = {
@@ -76,20 +76,30 @@ __meta__ = {
 }
 
 [node name="SpeedLabel" type="Label" parent="Interface"]
-margin_left = 1256.0
-margin_top = 26.0
-margin_right = 1296.0
-margin_bottom = 40.0
+margin_left = 1219.0
+margin_top = 24.0
+margin_right = 1259.0
+margin_bottom = 38.0
 text = "Speed"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SpeedSlider" type="HSlider" parent="Interface"]
-margin_left = 1303.0
+[node name="AuthorLabel" type="Label" parent="Interface"]
+margin_left = 446.0
 margin_top = 24.0
-margin_right = 1403.0
-margin_bottom = 40.0
+margin_right = 781.0
+margin_bottom = 38.0
+text = "Modified from Conway's Game of Life by Allen Zhang"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpeedSlider" type="HSlider" parent="Interface"]
+margin_left = 1265.0
+margin_top = 22.0
+margin_right = 1365.0
+margin_bottom = 38.0
 min_value = 1.0
 max_value = 10.0
 value = 1.0
