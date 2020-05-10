@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scenes/PlayButton.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Interface.gd" type="Script" id=1]
+[ext_resource path="res://scripts/StepDisplay.gd" type="Script" id=2]
+[ext_resource path="res://scripts/SpeedSlider.gd" type="Script" id=3]
 [ext_resource path="res://scripts/Grid.gd" type="Script" id=4]
 
 [node name="Scene" type="Node2D"]
@@ -9,24 +11,92 @@ position = Vector2( 0, 2 )
 [node name="Grid" type="Node" parent="."]
 script = ExtResource( 4 )
 
-[node name="Control" type="Control" parent="."]
-margin_left = 1403.0
+[node name="Interface" type="Control" parent="."]
+margin_top = -4.0
 margin_right = 1920.0
-margin_bottom = 1080.0
+margin_bottom = 56.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Play" type="Button" parent="Control"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -447.0
-margin_top = 72.0
-margin_right = -339.0
-margin_bottom = 106.0
+[node name="Play" type="Button" parent="Interface"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -173.0
+margin_top = -10.0
+margin_right = -92.0
+margin_bottom = 14.0
 text = "Play"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Next" type="Button" parent="Interface"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -40.0
+margin_top = -11.0
+margin_right = 41.0
+margin_bottom = 13.0
+text = "Next"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Clear" type="Button" parent="Interface"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 97.0
+margin_top = -10.0
+margin_right = 178.0
+margin_bottom = 14.0
+text = "Clear"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StepDisplay" type="Label" parent="Interface"]
+margin_left = 1167.0
+margin_top = 26.0
+margin_right = 1211.0
+margin_bottom = 40.0
+text = "Step: 0"
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Control/Play" to="Control/Play" method="_on_Play_pressed"]
+
+[node name="SpeedLabel" type="Label" parent="Interface"]
+margin_left = 1256.0
+margin_top = 26.0
+margin_right = 1296.0
+margin_bottom = 40.0
+text = "Speed"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpeedSlider" type="HSlider" parent="Interface"]
+margin_left = 1303.0
+margin_top = 24.0
+margin_right = 1403.0
+margin_bottom = 40.0
+min_value = 1.0
+max_value = 10.0
+value = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Interface/Play" to="Interface/Play" method="_on_Play_pressed"]
+[connection signal="pressed" from="Interface/Next" to="Interface/Next" method="_on_Next_pressed"]
+[connection signal="pressed" from="Interface/Clear" to="Interface/Clear" method="_on_Clear_pressed"]

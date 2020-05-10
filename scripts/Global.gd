@@ -1,9 +1,15 @@
-extends Button
+extends Node
 
 
 # Declare member variables here. Examples:
-# var a: int = 2
-# var b: String = "text"
+var myGrid = {}
+var rowNumber: int  = 17
+var colNumber: int  = 32
+
+var isPlaying:bool = false
+var stepNum:int = 0
+var stepTime:float = 2
+var stepTimer:float = 0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -14,9 +20,3 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 #	pass
-
-
-func _on_Play_pressed() -> void:
-#	get_node("/root/Grid").isPlaying = true
-	print("???")
-	pass # Replace with function body.
